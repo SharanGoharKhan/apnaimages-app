@@ -8,19 +8,12 @@ app.config(function($stateProvider,$urlRouterProvider, $locationProvider){
             controller: 'AppController',
             template: '<ui-view></ui-view>'
         });
+    $urlRouterProvider.otherwise('/home');    	
+});
+app.controller('AppController',function($scope, $rootScope){
 
-    $urlRouterProvider.otherwise(function($injector, $location){
-    	var parts = $location.host().split('.');
-    	var subdomain = parts.shift();
-
-    	switch(subdomain){
-    		case 'app':
-    			return '/admin';
-    		case 'www':
-    			return '/';
-    		default: 
-    			return '/home';
-    	}
+    $rootScope.$on('$locationChangeSuccess', function(e) {
+        /* To set the page scroll Top to 0, to show the start of page. */
+        window.scrollTo(0,0);
     });
-	
 });
