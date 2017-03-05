@@ -31,7 +31,10 @@ gulp.task('less', function () {
     	.pipe(concat('main.min.css'))
     	.pipe(gulp.dest('dist/css/'));
 });
-
+// gulp.task('css',function(){
+// 	return gulp.src('src/core/css/*.css')
+// 	.pipe(concat('src'))
+// })
 gulp.task('imgs',function(){
 	return gulp.src('src/core/imgs/*')
 		.pipe(gulp.dest('dist/imgs'));
