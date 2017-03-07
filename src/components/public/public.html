@@ -1,26 +1,51 @@
-<header class="header container">
-	<div class="container">
+<header class="header">
 		<div class="row">
-			<div class="col-md-4 col-sm-4">
-				<div class="header-logo">
-					<a ui-sref="app.public.home">
-					<img src="/imgs/logo_imagesBazaar.png">
-					</a>
+			<div class="col-md-12">
+				<div class="col-md-4">	
+					<div class="header-logo">
+						<a ui-sref="app.public.home">
+						<img src="/imgs/logo_imagesBazaar.png">
+						</a>
+					</div>
+				</div>
+				<div class="col-md-8">
+					<div class="menu-section">
+						<ul class="menu text-right">
+							<li><a href="#">Images</a></li>
+							<li><a href="#">Videos</a></li>
+							<li><a href="#">Subscription</a></li>
+							<li><a href="#">Sign In</a></li>
+							<li><a href="#">Help</a></li>
+						</ul>
+					</div>
 				</div>
 			</div>	
-			<div class="col-sm-12">
-				
-				<div class="menu-section">
-					<ul class="menu text-right">
-						<li><a href="#">Images</li>
-						<li><a href="#">Videos</li>
-						<li><a href="#">Subscription</li>
-						<li><a href="#">Sign In</li>
-						<li><a href="#">Help</li>
-					</ul>
-				</div>
+		</div>
+</header>
+<ui-view></ui-view>
+<footer class="footer">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="col-md-4">
+				<h4>Company Info</h4>
+				<p><a href="#">Home</a></p>
+				<p><a href="#">About Us</a></p>
+				<p><a href="#">Press Releases</a></p>
+				<p><a href="#">Testimonials</a></p>
+				<p><a href="#">Image Research</a></p>
+			</div>
+			<div class="col-md-4">
+				<h4>Learn More</h4>
+				<p><a href="#">Licensing</a></p>
+				<p><a href="#">Terms of Use</a></p>
+				<p><a href="#">Privacy Policy</a></p>
+			</div>
+			<div class="col-md-4">
+				<h4>Need Help</h4>
+				<p><a href="#">Contact Us</a></p>
+				<p><a href="#">Search Tips</a></p>
+				<p><a href="#">FAQ</a></p>
 			</div>
 		</div>
 	</div>
-</header>
-<ui-view></ui-view>
+</footer>
