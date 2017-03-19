@@ -65,14 +65,14 @@ gulp.task('component', function(){
 });
 
 gulp.task('bower', function(){
-	 // gulp.src(bowerFiles('**/*.js'))
-  //       .pipe(concat('library.min.js'))
-  //       .pipe(ngAnnotate())
-  //       .pipe(gulp.dest('dist/js/'));
+	gulp.src(bowerFiles('**/*.js'))
+        .pipe(concat('library.min.js'))
+        .pipe(ngAnnotate())
+        .pipe(gulp.dest('dist/js/'));
 
-  //   gulp.src(bowerFiles('**/*.css'))
-  //       .pipe(concat('library.min.css'))
-  //       .pipe(gulp.dest('dist/css/'));
+    gulp.src(bowerFiles('**/*.css'))
+        .pipe(concat('library.min.css'))
+        .pipe(gulp.dest('dist/css/'));
 
     gulp.src(bowerFiles('**/*.less'))
     	.pipe(less())
