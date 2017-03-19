@@ -1,4 +1,4 @@
-var app = angular.module('App',['ui.router','restangular', 'ui.bootstrap','ngCookies','ngSanitize','angular-momentjs', 'ngFileUpload']);
+var app = angular.module('App',['ui.router','restangular','ngCookies','ngSanitize','angular-momentjs', 'ngFileUpload']);
 
 // app.config(function($locationProvider, $stateProvider, $urlRouterProvider,$sceDelegateProvider,$sceProvider){
 // 	$sceProvider.enabled(false);

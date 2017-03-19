@@ -3,11 +3,35 @@
 	position: fixed;
 	width: 100%;
 	z-index: 1000;
-	background-color: #f8f8f8;
-	.header-logo
-	{
+	background-color: #1c2127;
+	.navbar-categories
+  {
+    .category-section
+    {
+      .menu-section
+      {
+        margin: 2%;
+        li
+        {
+          margin-right: 10px;
+          font-size: 16px;
+          display: inline-block;
+          list-style: none;
+          text-decoration: none;
+          color: #a2a5aa;
+          font-size: 1em;
+        }
+        a
+        {
+          color: #a2a5aa;
+        }
+      }
+      .text-left
+      {
 
-	}
+      }
+    }
+  }
 	.navbar-menu
 	{
 		.menu-section
@@ -15,6 +39,28 @@
 			margin: 2%;
 			.menu
 			{
+        .menu-dropdown
+        {
+                position: absolute; 
+                top: 22px;
+                background-color: #16192d;
+                padding: 54px 0px 20px 0px;
+                width: 150px;
+                left: -5px;
+
+                p {
+                    padding: 0px 20px 0px 20px;
+
+                    > a {
+                        display: block;
+                        width: 100%;
+                    }
+                }
+
+                p:hover {
+                    background-color: #5cb8e8;
+                }
+          }
 				ul
 				{
 
@@ -26,12 +72,12 @@
 					display: inline-block;
 					list-style: none;
 					text-decoration: none;
-	    			color: black;
-	    			font-size: 1em;
+	    		color: #a2a5aa;
+	    		font-size: 1em;
 				}
 				a
 				{
-					color: black;
+					color: #a2a5aa;
 				}
 			}
 			.text-right

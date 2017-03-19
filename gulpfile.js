@@ -21,7 +21,7 @@ gulp.task('scripts',function(){
 });
 
 gulp.task('less', function () {
-  	return gulp.src(['src/core/less/*.less','src/components/**/*.less'])
+  	return gulp.src(['src/core/ang/less/*.less','src/components/**/*.less'])
   		.pipe(concat('src/core/less/main.less'))
     	.pipe(less(
     		{
@@ -65,15 +65,20 @@ gulp.task('component', function(){
 });
 
 gulp.task('bower', function(){
-	return gulp.src(bowerFiles('**/*.js'))
-        .pipe(concat('library.min.js'))
-        .pipe(ngAnnotate())
-        .pipe(gulp.dest('dist/js/'));
+	 // gulp.src(bowerFiles('**/*.js'))
+  //       .pipe(concat('library.min.js'))
+  //       .pipe(ngAnnotate())
+  //       .pipe(gulp.dest('dist/js/'));
 
-    gulp.src(bowerFiles('**/*.css'))
-        .pipe(concat('library.min.css'))
-        .pipe(gulp.dest('dist/css/'));
-    // return true;
+  //   gulp.src(bowerFiles('**/*.css'))
+  //       .pipe(concat('library.min.css'))
+  //       .pipe(gulp.dest('dist/css/'));
+
+    gulp.src(bowerFiles('**/*.less'))
+    	.pipe(less())
+    	.pipe(concat('library.min.css'))
+    	.pipe(gulp.dest('dist/css/'));
+     return true;
 });
 
 gulp.task('serve', function(){

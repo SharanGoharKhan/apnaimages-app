@@ -1,28 +1,73 @@
-<header class="header">
+<!-- <header class="header">
 		<div class="row container-fluid">
 			<div class="col-sm-12 col-md-12">
-				<div class="col-sm-4 col-md-4">	
-					<div class="header-logo">
-						<a ui-sref="app.public.home">
-						<img src="http://ibcdn.imagesbazaar.com/Html2015/images/logo_imagesBazaar.png">
-						</a>
+				<div class="col-sm-5 col-md-5 navbar-categories">	
+					<div class="category-section">
+						<ul class="menu-section text-left">
+							<li><a href="#">Photos</li>
+							<li><a href="#">Illustration</li>
+							<li><a href="#">Videos</li>
+							<li><a href="#">Audio</li>
+						</ul>
 					</div>
 				</div>
-				<div class="col-sm-8 col-md-8 navbar-menu">
-					<div class="menu-section">
+				<div class="col-sm-7 col-md-7 navbar-menu">
 						<ul class="menu text-right">
-							<li><a href="#">Images</a></li>
-							<li><a href="#">Videos</a></li>
-							<li><a href="#">Subscription</a></li>
-							<li><a href="#">Sign In</a></li>
-							<li><a href="#">Help</a></li>
+							<li>
+								<div nav-bar-menu ng-mouseleave="onMouseleave();">
+									<a href="javascript:void(0);" ng-mouseover="onMouseover();">Solution</a>
+									<div class="menu-dropdown" ng-show="canShowMenu">
+										<p><a ui-sref="app.public.solution.howItWorks" ng-click="onClick();">How it Works</a></p>
+										<p><a ui-sref="app.public.solution.ourNinjas" ng-click="onClick();">Our Ninjas</a></p>
+										<p><a ui-sref="app.public.solution.clients" ng-click="onClick();">Clients</a></p>
+										<p><a ui-sref="app.public.startAProject" ng-click="onClick();">Start a Project</a></p>
+									</div>
+								</div>
+							</li>
+							<li><a href="#">Pricing</a></li>
+							<li><a href="#">SIGN IN</a></li>
+							<li><a ui-sref="signin">REGISTER</a></li>
 						</ul>
 					</div>
 				</div>
 				<header-hamburger-menu></header-hamburger-menu>
 			</div>	
 		</div>
-</header>
+</header> -->
+<div class="">
+  <button class="ui button">One</button>
+  <button class="ui button">Two</button>
+  <button class="ui button">Three</button>
+</div>
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">Navbar</a>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown link
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
 <div class="site-main-content-container">
 <ui-view></ui-view>
 </div>
