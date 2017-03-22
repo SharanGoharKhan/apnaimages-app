@@ -3,18 +3,14 @@ var app = angular.module("App");
 app.directive('navBarMenu', [function() {
 	return {
 		restrict: 'A',
-		scope: true,
+		scope: false,
 		link: function(scope, element, attrs) {
-			scope.canShowMenu = false;
-			scope.onMouseover = function() {
-				scope.canShowMenu = true;
-			};
-			scope.onClick = function() {
-				scope.canShowMenu = false;
-			};
-			scope.onMouseleave = function() {
-				scope.canShowMenu = false;
-			};
+			$('.ui.menu a.item').on('click', function() {
+          	$(this)
+            .addClass('active')
+            .siblings()
+            .removeClass('active');
+        	});
 		}
 	};
 }]);
