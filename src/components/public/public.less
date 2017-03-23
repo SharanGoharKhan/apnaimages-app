@@ -1,101 +1,40 @@
-.header
+.navbar-container
 {
-	position: fixed;
-	width: 100%;
-	z-index: 1000;
-	background-color: #1c2127;
-	.navbar-categories
-  {
-    .category-section
+  	.navbar-menu
     {
-      .menu-section
+      background-color: #1c2127;
+      #activeItem
+        {
+          color: white;
+        }
+      .navbar-left-menu > a
       {
-        margin: 2%;
-        li
-        {
-          margin-right: 10px;
-          font-size: 16px;
-          display: inline-block;
-          list-style: none;
-          text-decoration: none;
-          color: #a2a5aa;
-          font-size: 1em;
-        }
-        a
-        {
-          color: #a2a5aa;
-        }
+        color: white;
       }
-      .text-left
+      .navbar-right-menu  > a
       {
-
-      }
-    }
-  }
-	.navbar-menu
-	{
-		.menu-section
-		{
-			margin: 2%;
-			.menu
-			{
-        .menu-dropdown
+        color: white;
+        .dropbox-menu
         {
-                position: absolute; 
-                top: 22px;
-                background-color: #16192d;
-                padding: 54px 0px 20px 0px;
-                width: 150px;
-                left: -5px;
-
-                p {
-                    padding: 0px 20px 0px 20px;
-
-                    > a {
-                        display: block;
-                        width: 100%;
-                    }
-                }
-
-                p:hover {
-                    background-color: #5cb8e8;
-                }
+          color: white;
+          #dropboxIcon
+          {
+            color: white;
           }
-				ul
-				{
-
-				}
-				li
-				{
-					margin-right: 10px;
-					font-size: 16px;
-					display: inline-block;
-					list-style: none;
-					text-decoration: none;
-	    		color: #a2a5aa;
-	    		font-size: 1em;
-				}
-				a
-				{
-					color: #a2a5aa;
-				}
-			}
-			.text-right
-			{
-
-			}
-		}
-	}
-	/* Less than tablet */
-  @media (max-width: 750px)
-   {
-        .navbar-menu {
-          display: none;
         }
-        .hamburger-menu {
-              display: block;
-          }
+      }      
     }
+    
+  	/* Less than tablet */
+    @media (max-width: 750px)
+     {
+          .navbar-menu {
+            display: none;
+          }
+          .hamburger-menu {
+                display: block;
+            }
+      }
 }
 .footer
 {

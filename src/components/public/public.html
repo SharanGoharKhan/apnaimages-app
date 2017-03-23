@@ -1,4 +1,4 @@
-<a ui-sref="app.public.examples">Go to examples</a>
+
 <!-- <header class="header">
 		<div class="row container-fluid">
 			<div class="col-sm-12 col-md-12">
@@ -40,12 +40,40 @@
   <button class="ui button">Two</button>
   <button class="ui button">Three</button>
 </div> -->
-<!-- <header> -->
-<!-- </header> -->
+<header class="navbar-container">
+	<div class="ui large top fixed hidden menu navbar-menu">
+		<div class="ui container navbar-left-menu">
+			<a class="active item" id="activeItem">Photos</a>
+			<a class="item">Illustration</a>
+			<a class="item">Videos</a>
+			<a class="item">Audio</a>
+			<div class="right menu navbar-right-menu">
+				<div nav-bar-dropbox class="ui dropdown item navbar-items dropbox-menu">
+					Explore
+					<i class="dropdown icon" id="dropboxIcon"></i>
+					<div class="menu">
+						<div class="item">Action</div>
+      					<div class="item">Another Action</div>
+      					<div class="item">Something else here</div>
+      					<div class="divider"></div>
+      					<div class="item">Separated Link</div>
+      					<div class="divider"></div>
+      					<div class="item">One more separated link</div>
+					</div>
+				</div>
+				<a class="item navbar-items">Pricing</a>
+				<a class="item navbar-items">SIGN IN</a>
+				<a class="item navbar-items">REGISTER</a>
+			</div>
+		</div>
+	</div>
+</header>
 <div class="site-main-content-container">
 <ui-view></ui-view>
 </div>
+
 <footer class="footer">
+<a ui-sref="app.public.examples">Go to examples</a>
 	<div class="row container-fluid">
 		<div class="col-sm-12 col-md-12">
 			<div class="col-sm-4 col-md-4">
