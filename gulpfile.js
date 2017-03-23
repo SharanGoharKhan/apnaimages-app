@@ -36,7 +36,7 @@ gulp.task('less', function () {
 // 	.pipe(concat('src'))
 // })
 gulp.task('imgs',function(){
-	return gulp.src('src/core/imgs/*')
+	return gulp.src('src/core/imgs/**')
 		.pipe(gulp.dest('dist/imgs'));
 });
 
