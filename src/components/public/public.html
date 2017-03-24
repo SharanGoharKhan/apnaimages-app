@@ -48,9 +48,9 @@
 			<a class="item">Videos</a>
 			<a class="item">Audio</a>
 			<div class="right menu navbar-right-menu">
-				<div nav-bar-dropbox class="ui dropdown item navbar-items dropbox-menu">
+				<div nav-bar-dropbox class="ui dropdown item navbar-items dropbox-menu" style="color: white">
 					Explore
-					<i class="dropdown icon" id="dropboxIcon"></i>
+					<i class="dropdown icon" style="color: white"></i>
 					<div class="menu">
 						<div class="item">Action</div>
       					<div class="item">Another Action</div>
@@ -68,15 +68,10 @@
 		</div>
 	</div>
 </header>
-<div class="site-main-content-container">
 <ui-view></ui-view>
-</div>
-
 <footer class="footer">
-<a ui-sref="app.public.examples">Go to examples</a>
-	<div class="row container-fluid">
-		<div class="col-sm-12 col-md-12">
-			<div class="col-sm-4 col-md-4">
+	<div class="ui grid">
+			<div class="four wide column">
 				<h4>Company Info</h4>
 				<p><a href="#">Home</a></p>
 				<p><a href="#">About Us</a></p>
@@ -84,18 +79,20 @@
 				<p><a href="#">Testimonials</a></p>
 				<p><a href="#">Image Research</a></p>
 			</div>
-			<div class="col-sm-4 col-md-4">
+			<div class="four wide column">
 				<h4>Learn More</h4>
 				<p><a href="#">Licensing</a></p>
 				<p><a href="#">Terms of Use</a></p>
 				<p><a href="#">Privacy Policy</a></p>
 			</div>
-			<div class="col-sm-4 col-md-4">
+			<div class="four wide column">
 				<h4>Need Help</h4>
 				<p><a href="#">Contact Us</a></p>
 				<p><a href="#">Search Tips</a></p>
 				<p><a href="#">FAQ</a></p>
 			</div>
-		</div>
+			<div class="four wide column">
+			<a ui-sref="app.public.examples">Go to examples</a>
+			</div>
 	</div>
 </footer>
