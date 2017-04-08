@@ -28,6 +28,14 @@
 	    </div>
 	  </div>
 	  <div class="ui button" ng-click="register()" tabindex="0">Sign Up</div>
-	</form>	
+	  <div class="ui button" ng-click='login("gmail")'>Login with gmail</div>
+	  <div class="ui button" ng-click='login("facebook")'>Login with facebook</div><br>
+	  <h4>{{gmail.email}}</h4>
+	  <h4>{{gmail.username}}</h4>
+	  <img src="{{gmail.g_image}}" style="width: 100px;height: 100px">
+	  <h4>{{facebook.email}}</h4>
+	  <h4>{{facebook.username}}</h4>
+	  <img src="{{facebook.f_image}}" style="width: 100px;height: 100px">
+	</form>
 </div>
 
