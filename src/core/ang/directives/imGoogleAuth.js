@@ -2,7 +2,7 @@ app.directive('imGoogleAuth',function()
 {
 	return {
 		restrict: 'E',
-		scope: false,
+		scope: true,
 		templateUrl: '/templates/core/ang/templates/googleLogin.html',
 		link: function(scope,element,attrs)
 		{
@@ -20,6 +20,7 @@ app.directive('imGoogleAuth',function()
 								'userId':'me'
 							}
 						);
+						var getToken = gapi.auth.getToken();
 						request.execute(function(resp){
 							scope.$apply(function(){
 								scope.gmail.username = resp.displayName;
@@ -33,6 +34,7 @@ app.directive('imGoogleAuth',function()
 				'scope': 'https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.profile.emails.read'
 			};
 			gapi.auth.signIn(params);
+			//scope.gmail.access_token=gapi.auth.getToken().access_token;
 			}
 		}
 	}

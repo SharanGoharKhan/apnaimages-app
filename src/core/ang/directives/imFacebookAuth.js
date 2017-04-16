@@ -2,7 +2,7 @@ app.directive('imFacebookAuth',function()
 {
 	return {
 		restrict: 'E',
-		scope: false,
+		scope: true,
 		templateUrl: '/templates/core/ang/templates/facebookLogin.html',
 		link: function(scope,element,attrs)
 		{
@@ -30,6 +30,7 @@ app.directive('imFacebookAuth',function()
 					scope: 'email, user_likes',
 					return_scope: true
 				});
+				scope.facebook.access_token=FB.getAccessToken();
 			}
 		}
 	}
