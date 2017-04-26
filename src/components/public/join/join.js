@@ -5,11 +5,16 @@ app.config(function($stateProvider){
 		.state("app.public.join",{
 			url: "/join",
 			templateUrl: "/templates/components/public/join/join.html",
-			controller: "JoinController"
+			controller: "JoinController",
+			resolve : {
+				lazyLoad : function($ocLazyLoad){
+					return $ocLazyLoad.load(['vendor/sweetalert/dist/sweetalert.min.js' , 'vendor/sweetalert/dist/sweetalert.css','https://cdnjs.cloudflare.com/ajax/libs/angular-sweetalert/1.1.2/SweetAlert.min.js']);
+				}
+			}
 		})
 }); 
 
-app.controller("JoinController", function ($scope,$http,localStorageService,$rootScope) {
+app.controller("JoinController", function ($scope,$http,localStorageService,$rootScope,SweetAlert) {
 	$scope.gmail = {
 			username: '',
 			email: '',
@@ -24,6 +29,12 @@ app.controller("JoinController", function ($scope,$http,localStorageService,$roo
 	};	
 	$scope.register=function()
 	{
+		SweetAlert.swal({
+		  title: "Error!",
+		  text: "Here's my error message!",
+		  type: "error",
+		  confirmButtonText: "Cool"
+		});
 		$http.post($scope.app.apiUrl+"/auth/register",$scope.user)
 			.then(function statusChangeCallback(response){
 				$rootScope.$user=response.data;
