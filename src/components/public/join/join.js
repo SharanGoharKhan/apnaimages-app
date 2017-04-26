@@ -9,7 +9,7 @@ app.config(function($stateProvider){
 		})
 }); 
 
-app.controller("JoinController", function ($scope,$http) {
+app.controller("JoinController", function ($scope,$http,localStorageService,$rootScope) {
 	$scope.gmail = {
 			username: '',
 			email: '',
@@ -24,26 +24,20 @@ app.controller("JoinController", function ($scope,$http) {
 	};	
 	$scope.register=function()
 	{
-		$scope.user={};
-		console.log("register called");
-		$scope.user.first_name="sharan";
-		$scope.user.last_name="khan";
-		$scope.user.email="sharan.gohar@gmail.com";
-		$scope.user.password="sharan123";
 		$http.post($scope.app.apiUrl+"/auth/register",$scope.user)
-			.then(function(response){
-				if(response=='success')
-				{
-					console.log('success');
-				}
-				else
-				{
-					console.log('failed');
-				}
-			})
+			.then(function statusChangeCallback(response){
+				$rootScope.$user=response.data;
+				localStorageService.set('$user',$rootScope.$user);
+				console.log("success");
+			},function errorCallback(response)
+			{
+				$scope.error_message="Email already exists"
+			});
 	}
 	$scope.login=function(type)
 	{		
+		console.log("login");
+		return;
 	 // FB.getLoginStatus(function(response) {
 	 //    statusChangeCallback(response);
 	 //  });
