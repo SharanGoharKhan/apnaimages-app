@@ -3,8 +3,8 @@
 		<div class="seven wide column" style="text-align: center;">
 		<h1>Sign In</h1>
 		<form ng-submit="login()" class="ui form two fields">
-			<input type="email" class="ui large labeled input" ng-model="user.username" placeholder="Username or Email" ng-required="true">
-			<input type="text" class="ui input" placeholder="Password" ng-model="user.password" style="margin-top: 25px" ng-required="true">
+			<input type="email" class="ui large labeled input" ng-model="user.email" placeholder="Username or Email" ng-required="true">
+			<input type="password" class="ui input" placeholder="Password" ng-model="user.password" style="margin-top: 25px" ng-required="true">
 			<button type="submit" class="ui red button" style="margin-top: 25px;margin-bottom: 25px;width: 100%"> Sign In</button>
 			<br>
 			<a href="#" class="ui link">Forgot your password?</a>
@@ -19,8 +19,8 @@
 		<h1>Register</h1>
 		<form ng-submit="register()" class="ui form five fields">
 			<input type="email" class="ui large labeled input" placeholder="Username or Email" ng-model=user.email ng-required="true">
-			<input type="text" class="ui input" placeholder="Password" style="margin-top: 25px" ng-model="user.password" ng-required="true">
-			<input type="text" class="ui input" placeholder="Confirm Password" style="margin-top: 25px" ng-model=user.confirm_password ng-required="true">
+			<input type="password" class="ui input" placeholder="Password" style="margin-top: 25px" ng-model="user.password" ng-required="true">
+			<input type="password" class="ui input" placeholder="Confirm Password" style="margin-top: 25px" ng-model=user.confirm_password ng-required="true">
 			<input type="text" class="ui input" placeholder="First Name" style="margin-top: 25px" ng-model="user.first_name" ng-required="true">
 			<input type="text" class="ui input" placeholder="Last  Name" style="margin-top: 25px" ng-model="user.last_name" ng-required="true">
 			<button type="submit" class="ui red button" style="margin-top: 25px;margin-bottom: 25px;width: 100%"> Register</button>

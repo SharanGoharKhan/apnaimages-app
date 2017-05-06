@@ -14,27 +14,21 @@ app.config(function($stateProvider){
 		})
 }); 
 
-app.controller("JoinController", function ($scope,$http,localStorageService,$rootScope,SweetAlert) {
-	$scope.gmail = {
-			username: '',
-			email: '',
-			g_image: '',
-			access_token: ''
-		};
-	$scope.facebook = {
-			username: '',
-			email: '',
-			f_image: '',
-			access_token: ''
-	};	
+app.controller("JoinController", function ($scope,$http,localStorageService,$rootScope,SweetAlert,Restangular) {
+	// $scope.gmail = {
+	// 		username: '',
+	// 		email: '',
+	// 		g_image: '',
+	// 		access_token: ''
+	// 	};
+	// $scope.facebook = {
+	// 		username: '',
+	// 		email: '',
+	// 		f_image: '',
+	// 		access_token: ''
+	// };	
 	$scope.register=function()
 	{
-		SweetAlert.swal({
-		  title: "Error!",
-		  text: "Here's my error message!",
-		  type: "error",
-		  confirmButtonText: "Cool"
-		});
 		$http.post($scope.app.apiUrl+"/auth/register",$scope.user)
 			.then(function statusChangeCallback(response){
 				$rootScope.$user=response.data;
@@ -42,13 +36,30 @@ app.controller("JoinController", function ($scope,$http,localStorageService,$roo
 				console.log("success");
 			},function errorCallback(response)
 			{
-				$scope.error_message="Email already exists"
+				SweetAlert.swal({
+				  title: "Error!",
+				  text: "Email already exists",
+				  type: "error",
+				  confirmButtonText: "ok"
+				});
 			});
 	}
 	$scope.login=function(type)
-	{		
-		console.log("login");
-		return;
+	{	
+		console.log($scope.user);	
+		$http.post($scope.app.apiUrl+"/auth/login",$scope.user)
+			.then(function statusChangeCallback(response){
+				console.log("success");
+			},function errorCallback(response)
+			{
+				SweetAlert.swal({
+				  title: "Error!",
+				  text: "Email already exists",
+				  type: "error",
+				  confirmButtonText: "ok"
+				});
+			});
+		
 	 // FB.getLoginStatus(function(response) {
 	 //    statusChangeCallback(response);
 	 //  });
