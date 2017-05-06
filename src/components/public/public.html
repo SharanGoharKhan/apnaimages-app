@@ -62,8 +62,8 @@
 					</div>
 				</div>
 				<a class="item navbar-items">Pricing</a>
-				<a class="item navbar-items">SIGN IN</a>
-				<a class="item navbar-items" ui-sref='join'>REGISTER</a>
+				<a ng-if="user" class="item navbar-items">SIGN OUT</a>
+				<a  ng-if="!user" class="item navbar-items" ui-sref="app.public.join">SIGN IN or REGISTER</a>
 			</div>
 		</div>
 	</div>

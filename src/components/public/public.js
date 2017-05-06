@@ -8,6 +8,6 @@ app.config(function($stateProvider){
 			controller: "PublicController"
 		})
 }); 
-app.controller("PublicController", function ($scope) {
-
+app.controller("PublicController", function ($scope,$rootScope) {
+	$scope.user=$rootScope.user;
 });

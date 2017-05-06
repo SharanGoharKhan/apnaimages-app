@@ -4,7 +4,7 @@ var app = angular.module('App',['ui.router','restangular','ngCookies','ngSanitiz
 // 	$sceProvider.enabled(false);
 // });
 
-app.run(function($rootScope, $location, $state,$moment){
+app.run(function($rootScope, $location, $state,$moment,localStorageService){
 	var env = $location.host().split('.').pop();
 	var protocol = "http";
 	$rootScope.app = {
@@ -13,6 +13,7 @@ app.run(function($rootScope, $location, $state,$moment){
 		"appUrl" : protocol + "://app.myndplan." + env,
 		"env" : env
 	};
+	$rootScope.user=localStorageService.get("$user");
 });
 //Google authentication
 function onLoadFunction()

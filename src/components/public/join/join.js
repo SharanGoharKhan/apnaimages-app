@@ -14,7 +14,7 @@ app.config(function($stateProvider){
 		})
 }); 
 
-app.controller("JoinController", function ($scope,$http,localStorageService,$rootScope,SweetAlert,Restangular) {
+app.controller("JoinController", function ($scope,$http,localStorageService,$rootScope,SweetAlert,Restangular,$state) {
 	// $scope.gmail = {
 	// 		username: '',
 	// 		email: '',
@@ -33,7 +33,6 @@ app.controller("JoinController", function ($scope,$http,localStorageService,$roo
 			.then(function statusChangeCallback(response){
 				$rootScope.$user=response.data;
 				localStorageService.set('$user',$rootScope.$user);
-				console.log("success");
 			},function errorCallback(response)
 			{
 				SweetAlert.swal({
@@ -45,11 +44,12 @@ app.controller("JoinController", function ($scope,$http,localStorageService,$roo
 			});
 	}
 	$scope.login=function(type)
-	{	
-		console.log($scope.user);	
+	{		
 		$http.post($scope.app.apiUrl+"/auth/login",$scope.user)
 			.then(function statusChangeCallback(response){
-				console.log("success");
+				$rootScope.$user=response.data;
+				localStorageService.set('$user',$rootScope.$user);
+				$state.go('app.public.home');
 			},function errorCallback(response)
 			{
 				SweetAlert.swal({
@@ -60,8 +60,5 @@ app.controller("JoinController", function ($scope,$http,localStorageService,$roo
 				});
 			});
 		
-	 // FB.getLoginStatus(function(response) {
-	 //    statusChangeCallback(response);
-	 //  });
 	}
 });
