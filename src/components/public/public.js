@@ -8,6 +8,23 @@ app.config(function($stateProvider){
 			controller: "PublicController"
 		})
 }); 
-app.controller("PublicController", function ($scope,$rootScope) {
+app.controller("PublicController", function ($scope,$rootScope,localStorageService,$state) {
+	$rootScope.user=localStorageService.get("$user");
 	$scope.user=$rootScope.user;
+	if($scope.user)
+	{
+		console.log("user is not empty");
+	}
+	else
+		console.log("user is empty");
+	console.log("Before signout: "+$scope.user);
+	$scope.signout = function()
+	{
+		console.log("After signout: "+$scope.user);
+		localStorageService.remove('$user');
+		$rootScope.user = null;
+		$scope.user = null;
+		$scope.$apply();
+		$state.go("app.public.join");
+	}
 });
