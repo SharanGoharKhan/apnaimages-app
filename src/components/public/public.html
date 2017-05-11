@@ -1,45 +1,3 @@
-
-<!-- <header class="header">
-		<div class="row container-fluid">
-			<div class="col-sm-12 col-md-12">
-				<div class="col-sm-5 col-md-5 navbar-categories">	
-					<div class="category-section">
-						<ul class="menu-section text-left">
-							<li><a href="#">Photos</li>
-							<li><a href="#">Illustration</li>
-							<li><a href="#">Videos</li>
-							<li><a href="#">Audio</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-sm-7 col-md-7 navbar-menu">
-						<ul class="menu text-right">
-							<li>
-								<div nav-bar-menu ng-mouseleave="onMouseleave();">
-									<a href="javascript:void(0);" ng-mouseover="onMouseover();">Solution</a>
-									<div class="menu-dropdown" ng-show="canShowMenu">
-										<p><a ui-sref="app.public.solution.howItWorks" ng-click="onClick();">How it Works</a></p>
-										<p><a ui-sref="app.public.solution.ourNinjas" ng-click="onClick();">Our Ninjas</a></p>
-										<p><a ui-sref="app.public.solution.clients" ng-click="onClick();">Clients</a></p>
-										<p><a ui-sref="app.public.startAProject" ng-click="onClick();">Start a Project</a></p>
-									</div>
-								</div>
-							</li>
-							<li><a href="#">Pricing</a></li>
-							<li><a href="#">SIGN IN</a></li>
-							<li><a ui-sref="signin">REGISTER</a></li>
-						</ul>
-					</div>
-				</div>
-				<header-hamburger-menu></header-hamburger-menu>
-			</div>	
-		</div>
-</header>  -->
-<!-- <div class="">
-  <button class="ui button">One</button>
-  <button class="ui button">Two</button>
-  <button class="ui button">Three</button>
-</div> -->
 <header class="navbar-container">
 	<div class="ui large top fixed hidden menu navbar-menu">
 		<div class="ui container navbar-left-menu">
@@ -62,8 +20,19 @@
 					</div>
 				</div>
 				<a class="item navbar-items">Pricing</a>
+				<div ng-if="user" nav-bar-dropbox class="ui dropdown item navbar-items dropbox-menu" style="color: white">
+					{{user.first_name}}
+					<i class="dropdown icon" style="color: white"></i>
+					<div class="menu">
+						<div class="item">My Profile</div>
+      					<div class="item"><a ui-sref="app.public.profile.edit_profile">Edit Profile</a></div>
+      					<div class="divider"></div>
+      					<div class="item">My Downloads</div>
+      					<div class="item">My Uploads</div>
+					</div>
+				</div>
 				<a ng-if="user" ng-click="signout()" class="item navbar-items">SIGN OUT</a>
-				<a  ng-if="!user" class="item navbar-items" ui-sref="app.publicgis.join">SIGN IN-or-REGISTER</a>
+				<a ng-if="!user" class="item navbar-items" ui-sref="app.publicgis.join">SIGN IN-or-REGISTER</a>
 			</div>
 		</div>
 	</div>
